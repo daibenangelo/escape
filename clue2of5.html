@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>CLUE 2 OF 5</title>
+    <___#18___>
+      $(document).ready(function () {
+        ______#2_______ = {
+          coke: 25,
+          sprite: 18,
+          royal: 20,
+        };
+
+        coke_amount = 0;
+        _____#1______ = 0;
+        royal_amount = 0;
+
+        let _#3_ = 300;
+        $("#cash_display")_#10_(cash);
+
+        $("#buy_coke").click(function () {
+          if (cash > product_prices["coke"]) {
+            cash -= product_prices["coke"];
+          }
+
+          $("#last_purchase")_#10_("You bought Coke!");
+          ____#4_____++;
+          $("#cash_display")_#10_(cash);
+          update_inventory();
+        });
+
+        $("#buy_sprite").click(function () {
+          if (cash > product_prices["sprite"]) {
+            cash -= product_prices["sprite"];
+          }
+          $("#last_purchase")_#10_("You bought Sprite!");
+          sprite_amount++;
+          $("#cash_display")_#10_(cash);
+          _______#5_______();
+        });
+
+        $("____#9____").click(function () {
+          if (cash > product_prices["__#11__"]) {
+            cash -= product_prices["__#11__"];
+          }
+          $("#last_purchase")_#10_("You bought Royal!");
+          royal_amount++;
+          $("______#12______")_#10_(cash);
+          update_inventory();
+        });
+      });
+
+      __#17___ _______#13______() {
+        $("#coke_amount")_#10_(_____#16____);
+        $("_____#7______")_#10_(sprite_amount);
+        $("#royal_amount")_#10_(_____#8_____);
+      }
+    </___#18___>
+  </head>
+  <body>
+    <h1>Beverage Section</h1>
+    <img src="coke.jpg" _#14_="coke" width="80px" id="___#6___" />
+    <img src="sprite._#21_" _#14_="sprite" width="80px" id="buy_sprite" />
+    <img src="royal.jpg" _#14_="royal" width="80px" id="buy_royal" />
+    <p><span id="last_purchase"></span></p>
+    <p>₱<span id="cash_display"></span></p>
+    <h2>Inventory</h2>
+    <_#20_>
+      <li>_#15__ <span id="coke_amount"></span></li>
+      <li>Sprite: <span id="sprite_amount"></span></li>
+      <li>Royal: <span id="___#19______"></span></li>
+    </_#20_>
+  </body>
+</html>
